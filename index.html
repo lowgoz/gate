@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gate Control</title>
+    <script>
+        function openTheGate() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://hooks.nabu.casa/gAAAAABldTvT2kGBohhU2dmev75ODoWXphAp2ytvleoBfqc3ag4q8nj9U90po-2uNECssQEqmzpZYl3mNPAnyHpjOtsBqR049ZJNVKyzFEvM8S8gpwyyAji0i09HKWdlTEnQ8y41IJiha1ftErBqyVd7maOV50KoWQEH3eDd5N3IWvufp9c8bSE=", true);
+            xhr.send();
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert("Gate opened successfully!");
+                } else {
+                    alert("Failed to open the gate.");
+                }
+            };
+        }
+
+        function closeTheGate() {
+            var confirmed = confirm("Are you sure you want to close the gate?");
+            if (!confirmed) {
+                return;
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://hooks.nabu.casa/gAAAAABlf6B7r0RrDbWzMX5MH3xeyClSfbgbuSExVkw1PWZ5lsXSR6UF2S1sinLNWdKLt4TNsPI--BBtV2PDu6qqg6CNxfK29p1s3ce4Y2K0KJ133ItAJ_y-uJJf1gS-J4pTlHO3dMWzOy5vKQkGudcxLvKZ6eW7rVy-T0GjcUsFx1PR56BHI0Q=", true);
+            xhr.send();
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert("Gate closed successfully!");
+                } else {
+                    alert("Failed to close the gate.");
+                }
+            };
+        }
+    </script>
+    <style>
+        .green-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .green-button:hover {
+            background-color: darkgreen;
+        }
+
+        .red-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .red-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <button class="green-button" onclick="openTheGate()">Open The Gate</button>
+    <button class="red-button" onclick="closeTheGate()">Close The Gate</button>
+</body>
+</html>
